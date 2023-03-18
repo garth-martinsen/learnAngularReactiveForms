@@ -1,0 +1,21 @@
+ <form  [formGroup]= "skillsForm" >
+ <tr>
+    <td>name</td>
+    <td>start</td>
+    <td>stop</td>
+    <td><button (ngSubmit)="onSubmit()">SUBMIT</button></td>
+</tr>
+<tr>
+    <td *ngFor="let sn of SKILL_NAMES" >{{sn}}</td>
+</tr>
+<tr>
+   
+
+        <td *ngFor="let sn of SKILL_NAMES" >
+            <input size="2" id="{{sn}}" min="-1" max="2" type="number" formControlName="{{sn}}">
+        </td>
+
+    
+</tr>
+</form>
+<p> Form Value: {{this.skillsForm.value | json}} </p>
